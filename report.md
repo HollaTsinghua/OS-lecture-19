@@ -1,0 +1,7 @@
+lab7 result实现的是Hoare管程，修改monitor.c以实现Hasen管程
+
+主要修改两个函数cond_signal和cond_wait
+
+Hansen管程中调用cond_signal的进程先将自己执行完毕，才切换到被唤醒的进程，故cond_signal只要释放即可
+
+而cond_wait与Hoare管程略有区别，需要先释放mutex，等唤醒后再申请mutex
